@@ -1,5 +1,5 @@
 # ManDiligMa
-**Smart Irrigation and Health Monitoring System for Lettuce Using Machine Learning and Mobile Application**
+**Smart Irrigation and Health Monitoring System Using Machine Learning and Mobile Application**
 
 ManDiligMa is an intelligent irrigation system designed to optimize water usage for lettuce cultivation. By leveraging the **K-Nearest Neighbors (KNN)** algorithm, the system analyzes real-time environmental data **Temperature, Humidity, and Soil Moisture** to accurately determine if irrigation is required.
 
