@@ -87,11 +87,11 @@ void setup() {
   }
 
   if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("\n✅ Connected to WiFi!");
+    Serial.println("\n Connected to WiFi!");
     Serial.print("IP Address: ");
     Serial.println(WiFi.localIP());
   } else {
-    Serial.println("\n❌ Failed to connect to WiFi. Check SSID/password.");
+    Serial.println("\n Failed to connect to WiFi. Check SSID/password.");
   }
 
   Serial.println("System Ready!");

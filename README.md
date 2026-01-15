@@ -1,39 +1,41 @@
-
 # ManDiligMa
+**Smart Irrigation and Health Monitoring System Using Machine Learning and Mobile Application**
 
-Smart Irrigation and Health Monitoring System for Lettuce Using Machine Learning and Mobile Application
+ManDiligMa is an intelligent irrigation system designed to optimize water usage for lettuce cultivation. By leveraging the **K-Nearest Neighbors (KNN)** algorithm, the system analyzes real-time environmental data **Temperature, Humidity, and Soil Moisture** to accurately determine if irrigation is required.
 
-This project demonstrates a smart irrigation system that uses a machine learning model to predict the precise amount of water needed for plant based on environmental sensor readings of Arduino Uno. The system leverages historical data to make intelligent, data-driven decisions, optimizing water usage and promoting sustainable agriculture.
-
-The core of this project is a Python script that trains a Support Vector Regression (SVR) model to predict water requirements. This approach moves beyond simple on/off irrigation rules and provides a more accurate, tailored solution for your plants.
+---
 
 ## How It Works
 The system operates in two main phases:
 
-**Model Training:** The smart_irrigation_model.py script uses a historical dataset `(svm/TARP.csv from Kaggle)` containing sensor readings for soil moisture, temperature, and humidity. It trains an SVR model to learn the relationship between these environmental factors and a target variable: the actual amount of water needed.
+1. **Model Training:** The system uses the **KNN algorithm** trained on historical environmental data. KNN works by identifying the "K" most similar historical instances to the current sensor readings to classify whether the plant needs water.
+2. **Real-Time Prediction:**
+    * **Sensors:** An Arduino Uno captures live data from Soil Moisture, Temperature, and Humidity sensors.
+    * **Processing:** The Python script receives this data via Serial communication.
+    * **Classification:** The KNN model evaluates the live input and outputs a decision: **Irrigate** or **Do Not Irrigate**.
 
-**Real-Time Prediction:** Once the model is trained and saved, it can be deployed on a device (like Arduino Uno or your device itself) connected to real-time sensors. The system will use live sensor readings as input to the trained model, which will then output a prediction for the optimal amount of water to apply.
+---
 
-**Key Features
-Data-Driven:** The model learns from your unique environmental data, adapting to your specific conditions.
+## Key Features
+* **KNN-Powered Logic:** Replaces static "if-else" thresholds with a machine learning model that understands the relationship between different environmental factors.
+* **Precision Monitoring:** Specifically tuned for lettuce, ensuring the soil moisture is kept at an optimal level.
+* **Data Cleaning:** Built-in preprocessing to handle missing values and scale features for better KNN accuracy.
 
-**Precision:** It predicts the amount of water needed instead of a simple "on/off" decision.
+---
 
-**Data Cleaning:** The script automatically handles missing values in the dataset to ensure a smooth training process.
+## Tech Stack
+* **Hardware:** Arduino Uno, DHT22 (Temp/Humid), Soil Moisture Sensor, Relay.
+* **Language:** Python 3.6+
+* **Libraries:** * `scikit-learn`: For the KNN implementation.
+    * `pandas` & `numpy`: For data manipulation.
+    * `pyserial`: For Arduino-to-PC communication.
+    * `joblib`: For saving/loading the ML model.
 
-**Model Persistence:** The trained model is saved to a file `(irrigation_model.pkl)` so you can easily deploy it without retraining.
-
+---
 
 ## Getting Started
-Prerequisites
 
-- Python 3.6 or later
-- pandas
-- scikit-learn
-- numpy
-- joblib
-- pyserial
-
-### You can install these libraries using pip:
-
-``` pip install pandas scikit-learn numpy joblib pyserial ```
+### 1. Prerequisites
+Ensure you have Python installed. Then, install the required libraries:
+```bash
+pip install pandas scikit-learn numpy joblib pyserial
