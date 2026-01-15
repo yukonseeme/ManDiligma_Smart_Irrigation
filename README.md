@@ -20,7 +20,6 @@ The system operates in two main phases:
 * **KNN-Powered Logic:** Replaces static "if-else" thresholds with a machine learning model that understands the relationship between different environmental factors.
 * **Precision Monitoring:** Specifically tuned for lettuce, ensuring the soil moisture is kept at an optimal level.
 * **Data Cleaning:** Built-in preprocessing to handle missing values and scale features for better KNN accuracy.
-* **Model Persistence:** The trained model is saved as `irrigation_model.pkl` for fast deployment without retraining.
 
 ---
 
